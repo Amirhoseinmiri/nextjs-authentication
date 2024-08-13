@@ -11,4 +11,8 @@ export async function signUp(prevFormState, formData) {
   if (password.trim().length < 8) {
     errors.password = "Password must be at least 8 character long";
   }
+
+  if (Object.keys(errors).length > 0) {
+    return { errors };
+  }
 }
